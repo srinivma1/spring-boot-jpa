@@ -34,7 +34,8 @@ public class Book implements Serializable{
     private BookCategory bookCategory;
     private Integer bookCategoryId;
     
-   
+   //For manytoone only persist the foreign key id ..so created another attribute..declared as @Transient so that it is not persisted but
+    //serializable to JSON
     @Transient
     public Integer getBookCategoryId() {
 		return bookCategory.getId();
@@ -62,6 +63,8 @@ public class Book implements Serializable{
         this.name = name;
     }
 
+    
+    //I do not need this object only ID hence marked as @JSONIgnore
    @JsonIgnore
   
     @ManyToOne
