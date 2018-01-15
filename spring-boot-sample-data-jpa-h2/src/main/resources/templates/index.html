@@ -20,13 +20,17 @@
     <thead>
     <th>#</th>
     <th>Category</th>
+    
+    
    
     </thead>
     <tbody>
     <tr th:each="person : ${personList}">
       <td th:text="${person.id}"></td>
       <td th:text="${person.name}"></td>
-   
+  <tr th:each="book : ${person.books}">
+  <td th:text="${book.name}"></td>
+   </tr>
      
     </tr>
     </tbody>

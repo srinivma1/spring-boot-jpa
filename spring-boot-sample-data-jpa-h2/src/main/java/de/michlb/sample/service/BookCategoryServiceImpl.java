@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -36,5 +37,12 @@ public BookCategory saveBookCategory(BookCategory bookCategory) {
 public void deleteBookCategoryList(List<Integer> ids) {
 	bookCategoryRepository.deleteByIdIn(ids);
 	
+}
+
+@org.springframework.transaction.annotation.Transactional(readOnly=true)
+@Override
+public Set<BookCategory> findBookCategoryByName(String name) {
+	// TODO Auto-generated method stub
+	return bookCategoryRepository.findByBookCategoryName(name);
 }
 }

@@ -49,11 +49,19 @@ public class IndexController {
 	     Book b = new Book();
 	     b.setName("BookA1");
 	     b.setBookCategory(categoryA);
+	     Book c = new Book();
+	     c.setName("BookA2");
+	     c.setBookCategory(categoryA);
+	     Book d = new Book();
+	     d.setName("BookA3");
+	     d.setBookCategory(categoryA);
 	     bookAs.add(b);
+	     bookAs.add(d);
+	     bookAs.add(c);
 	    categoryA.setBooks(bookAs);
 	 personService.saveBookCategory(categoryA);
 		
-		List<BookCategory> personList = personService.loadAll();
+		Set<BookCategory> personList =personService.findBookCategoryByName("Category A");
 		model.addAttribute("personList", personList);
 
 		return "index"; // return index.html Template
