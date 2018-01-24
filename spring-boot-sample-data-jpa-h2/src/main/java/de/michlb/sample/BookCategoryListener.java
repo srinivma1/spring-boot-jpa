@@ -22,7 +22,7 @@ public class BookCategoryListener {
 	
 @PostPersist
 public void postPersist(BookCategory bookCategory)throws Exception {
-	System.out.println("*****In the post persist method of book category***"+bookCategory.getName());
+	System.out.println("*****In the post persist method of book category**"+bookCategory.getName());
 	ObjectMapper objMapper = new ObjectMapper();
 
 	String jsonString = objMapper.writeValueAsString(bookCategory);
