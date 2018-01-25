@@ -50,7 +50,7 @@ public class IndexController {
 	     b.setName("BookA1");
 	     b.setBookCategory(categoryA);
 	     Book c = new Book();
-	     c.setName("BookA2");
+	     c.setName("BookA4");
 	     c.setBookCategory(categoryA);
 	     Book d = new Book();
 	     d.setName("BookA3");
