@@ -28,7 +28,7 @@ public class SampleApplication{
   
   
   
-  @Component
+  /*@Component
 	class MessageRoute extends RouteBuilder {
 
 		@Override
@@ -37,6 +37,6 @@ public class SampleApplication{
 			
 			.inOnly("netty:tcp://localhost:9998?transferExchange=true&sync=false&synchronous=false");
 		}
-	}
+	}*/
 
 }

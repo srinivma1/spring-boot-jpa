@@ -1,5 +1,4 @@
-FROM 192.168.99.102:5000/openjdk8
+FROM openjdk:8u131-jre-alpine
 VOLUME /tmp
-ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ADD /target/spring-boot-sample-data-jpa-h2-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar /app.jar
