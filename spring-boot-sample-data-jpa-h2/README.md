@@ -30,4 +30,9 @@ spring.thymeleaf.cache=false
 ## concourse
 fly -t example login -c http://localhost:8080
 
-fly -t example set-pipeline --pipeline spring-boot-sample-data-jpa-h2 --config concourse-pipeline.yml   
+fly -t example set-pipeline --pipeline spring-boot-sample-data-jpa-h2 --config concourse-pipeline.yml
+
+## commands
+docker compose up --build(build and run)
+docker compose down --rmi all --remove-orphans
+   
