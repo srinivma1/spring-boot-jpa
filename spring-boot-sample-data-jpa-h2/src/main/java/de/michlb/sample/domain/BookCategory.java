@@ -24,7 +24,7 @@ import de.michlb.sample.BookListener;
  *
  */
 @Entity
-@EntityListeners(BookCategoryListener.class)
+//@EntityListeners(BookCategoryListener.class)
 @Table(name = "book_category")
 public class BookCategory implements Serializable{
     /**

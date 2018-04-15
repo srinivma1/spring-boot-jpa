@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.michlb.sample.BookListener;
 
 @Entity
-@EntityListeners(BookListener.class)
+//@EntityListeners(BookListener.class)
 public class Book implements Serializable{
     /**
 	 * 

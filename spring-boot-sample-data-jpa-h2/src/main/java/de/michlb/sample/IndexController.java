@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.michlb.sample.domain.Book;
 import de.michlb.sample.domain.BookCategory;
+import de.michlb.sample.repositories.BookRepository;
+import de.michlb.sample.repositories.BookSpecification;
 import de.michlb.sample.service.BookCategoryService;
 
 
@@ -28,14 +30,25 @@ public class IndexController {
 
 	private BookCategoryService personService;
 
-
+@Autowired
+private BookRepository bookRepository;
 
 	
 
 	@RequestMapping("/")
 	public String showIndex(Model model) {
 		List<BookCategory> personList = personService.loadAll();
-
+		List bookNames = new ArrayList();
+		bookNames.add("BookA1");
+		bookNames.add("BookA3");
+		List bookIds = new ArrayList();
+		bookIds.add(1);
+		bookIds.add(2);
+		bookIds.add(4);
+		bookIds.add(5);
+		
+         List<Book> bookList = bookRepository.findAll(new BookSpecification());
+         System.out.println(bookList.size());
 		model.addAttribute("personList", personList);
 
 		return "index"; // return index.html Template
